@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Bindings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="js/fontawesome.js"></script>
+    <style>
+ 
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+ 
+        body{
+          font-family: 'Kanit', sans-serif;
+        }
+ 
+      </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-12">
+                <h1>{{ message }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                      Menu
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" v-for="item in profile"><a href="#" @click="filter(item.id)">{{ item.name }} {{ item.lastname }}</a></li>
+                    </ul>
+                  </div>
+                </div>
+ 
+                <div class="col-8">
+                    <div>
+                        <ul>
+                            <li>หมายเลข: {{ showProfile.id }}</li>
+                            <li>ชื่อ: {{ showProfile.name }} </li>
+                            <li>นามสกุล: {{ showProfile.lastname }} </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const { createApp, ref } = Vue;
+ 
+  createApp({
+    data() {
+        return {
+            message: "My Profile",
+            profile: [
+                {id:1,name:"copter",lastname:"whiska"},
+                {id:2,name:"astrix",lastname:"Gologoso"},
+                {id:3,name:"snet",lastname:"stark"},
+            ],
+            showProfile: {},
+            
+        }
+    },
+    methods: {
+        filter(id){
+            var temp = this.profile.filter((item) => item.id == id);
+            this.showProfile = temp[0];
+        }
+        
+    }
+ 
+  }).mount('#app')
+</script>
+</html>
