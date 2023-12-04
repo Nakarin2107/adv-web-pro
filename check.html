@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Example</title>
+</head>
+<h1>คุณอยากไปดูหนังกับใครมากที่สุด</h1>
+<body>
+    <input type="checkbox" id="select-all" style="background-color: #142314;">เลือกทั้งหมด</input><br>
+    <br>
+    <input type="checkbox">เพื่อน</input>
+    <br>
+    <input type="checkbox">แฟน</input>
+    <br>
+    <input type="checkbox">ครอบครัว</input>
+    <br>
+    <input type="checkbox">แมว</input>
+    <br>
+
+    <script>
+        
+        document.getElementById('select-all').addEventListener('click', function () {
+            
+            var checkboxes = document.getElementsByTagName('input');
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].type === 'checkbox') {
+                    checkboxes[i].checked = this.checked;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
