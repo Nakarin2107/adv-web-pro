@@ -1,0 +1,30 @@
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+      </head>
+  <body>
+
+  <div id="app">
+      
+      <div :style="{ backgroundColor: selectedColor, minHeight: '100vh', padding: '20px' }">
+          <h1>Show a Color Picker</h1>
+      
+  <form action="/action_page.php">
+    <label for="favcolor">Select your favorite color:</label>
+    <input type="color" id="favcolor" name="favcolor" v-model="selectedColor"><br><br>
+    <input type="submit">
+  </form>
+  </div>
+  </div>
+  <script>
+      new Vue({
+        el: '#app',
+        data: {
+          selectedColor: '#00ffff'
+        }
+      });
+      </script>
+
+  </body>
+  </html>

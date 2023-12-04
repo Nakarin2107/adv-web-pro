@@ -21,8 +21,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: <Widget>[
-          Image.asset(S
-            'images/252.jpg',
+          Image.asset(
+            "images/252.jpg",
             width: 600,
             height: 300,
             fit: BoxFit.cover,
