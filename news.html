@@ -14,10 +14,11 @@
 
 <body>
     <div id="app">
+       <h1 class="L">News</h1>
         <div v-for="article in articles" :key="article.title" class="article">
             <h2>{{ article.title }}</h2>
             <p>{{ article.description }}</p>
-            <a :href="article.url" target="_blank" class="btn btn-primary">Read more</a>
+            <a :href="article.url" target="_blank" >Read more</a>
         </div>
     </div>
 </body>
