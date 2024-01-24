@@ -7,7 +7,8 @@
 </head>
 <h1>คุณอยากไปดูหนังกับใครมากที่สุด</h1>
 <body>
-    <input type="checkbox" id="select-all" style="background-color: #142314;">เลือกทั้งหมด</input><br>
+    <div class="card mt-5" style="background-color: rgb(9, 9, 67);">
+    <input type="checkbox" id="select-all">เลือกทั้งหมด</input><br>
     <br>
     <input type="checkbox">เพื่อน</input>
     <br>
@@ -17,7 +18,8 @@
     <br>
     <input type="checkbox">แมว</input>
     <br>
-
+    </div>
+        
     <script>
         
         document.getElementById('select-all').addEventListener('click', function () {
